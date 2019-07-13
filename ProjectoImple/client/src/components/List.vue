@@ -4,15 +4,15 @@
     <div id="todo-list-example" class="container">
       <div class="row">
         <div class="col-md-6 mx-auto">
-          <h1 class="text-center">TODO List App</h1>
+          <h1 class="text-center">Proyecto Imple - Registro en Agenda</h1>
           <form v-on:submit.prevent="addNewTask">
             <label for="tasknameinput">Task Name</label>
             <input v-model="taskname" id="tasknameinput" class="form-control" placeholder="Add New Task">
             <button v-if="this.isEdit == false" type="submit" class="btn btn-success btn-block  mt-3">
-              Submit
+              Registrar
             </button>
             <button v-else type="button" v-on:click="updateTask()" class="btn btn-primary btn-block  mt-3">
-              Update
+              Editar
             </button>
           </form>
 
@@ -20,8 +20,8 @@
             <tr v-for="(todo) in todos" v-bind:key="todo.id" v-bind:task_name="todo.task_name">
               <td class="text-left">{{todo.task_name}}</td>
               <td class="text-right">
-                <button v-on:click="editTask(todo.task_name, todo.id)" class=" btn btn-info ">Edit</button>
-                <button v-on:click="deleteTask(todo.id)" class=" btn btn-danger ">Delete</button>
+                <button v-on:click="editTask(todo.task_name, todo.id)" class=" btn btn-info ">Editar</button>
+                <button v-on:click="deleteTask(todo.id)" class=" btn btn-danger ">Eliminar</button>
               </td>
             </tr>
           </table>

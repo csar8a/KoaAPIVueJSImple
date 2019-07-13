@@ -22,7 +22,7 @@ router.get('/api/task/:id', async ctx => {
       if (task) {
         ctx.body = task
       } else {
-        ctx.body = 'Task does not exist'
+        ctx.body = 'Tarea no existe'
       }
     })
     .catch(err => {
@@ -53,7 +53,7 @@ router.delete('/api/task/:id', async ctx => {
     }
   })
     .then(() => {
-      ctx.body = { status: 'Task Deleted!' }
+      ctx.body = { status: 'Tu tarea urp ha sido eliminada' }
     })
     .catch(err => {
       ctx.body = 'error: ' + err
@@ -71,7 +71,7 @@ router.put('/api/task/:id', async ctx => {
       { where: { id: ctx.params.id } }
     )
       .then(() => {
-        ctx.body = { status: 'Task Updated!' }
+        ctx.body = { status: 'Tu tarea urp ha sido actualizada' }
       })
       .catch(err => {
         ctx.body = 'error: ' + err
